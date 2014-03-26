@@ -46,7 +46,8 @@
                 {{#each model}}
                     <li>
                         {{#link-to 'document' this}}
-                            {{title}} by {{author.name}}
+                            {{title}} by {{author.name}}<br>
+                            {{format-date date}}
                         {{/link-to}}
                     </li>
                 {{/each}}

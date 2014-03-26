@@ -23,7 +23,7 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li><a href="#">Link</a></li>
-                        <li><a href="#">Link</a></li>
+                        <li>{{#link-to 'about'}}About{{/link-to}}</li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="#" class="btn btn-default navbar-btn">Link</a></li>
@@ -33,24 +33,44 @@
         </nav>
 
         <div class="container">
-            <div class="col-sm-3">
-                <ul class="nav nav-pills nav-stacked">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">Profile</a></li>
-                    <li><a href="#">Messages</a></li>
-                </ul>
-            </div>
-
-            <div class="col-sm-9">
-                <h1>Testing here</h1>
-                <h3>Subtitle goes here</h3>
-                <div class="body">
-                </div>
-                {{outlet}}
-            </div>
+            {{ outlet }}
         </div>
 
     </script>
+
+    <!-- Main template -->
+    <script type="text/x-handlebars" data-template-name="main">
+
+        <div class="col-sm-3">
+            <ul class="nav nav-pills nav-stacked">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Messages</a></li>
+            </ul>
+        </div>
+
+        <div class="col-sm-9">
+            <h1>Testing here</h1>
+            <h3>Subtitle goes here</h3>
+            <div class="body">
+            </div>
+            {{outlet}}
+        </div>
+
+    </script>
+    <!-- End of main template -->
+
+    <!-- About template -->
+    <script type="text/x-handlebars" data-template-name="about">
+        <div class="col-sm-12">
+            <h1>Testing here</h1>
+            <h3>Subtitle goes here</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at scelerisque eros. Fusce sit amet aliquam leo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam eleifend nisi ac enim viverra in tincidunt massa scelerisque. Etiam vel eros ante, vehicula suscipit nulla. Proin at ligula eu turpis sagittis tempor. Fusce rhoncus condimentum ligula, vitae luctus nibh rhoncus sit amet.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at scelerisque eros. Fusce sit amet aliquam leo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam eleifend nisi ac enim viverra in tincidunt massa scelerisque. Etiam vel eros ante, vehicula suscipit nulla. Proin at ligula eu turpis sagittis tempor. Fusce rhoncus condimentum ligula, vitae luctus nibh rhoncus sit amet.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at scelerisque eros. Fusce sit amet aliquam leo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam eleifend nisi ac enim viverra in tincidunt massa scelerisque. Etiam vel eros ante, vehicula suscipit nulla. Proin at ligula eu turpis sagittis tempor. Fusce rhoncus condimentum ligula, vitae luctus nibh rhoncus sit amet.</p>
+        </div>
+    </script>
+    <!-- End of about tempalte -->
 
     <script src="js/libs/jquery-1.10.2.js"></script>
     <script src="js/libs/handlebars-1.1.2.js"></script>

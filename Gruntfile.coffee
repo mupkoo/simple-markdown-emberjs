@@ -5,9 +5,10 @@ module.exports = (grunt) ->
         connect:
             server:
                 options:
+                    open: true
                     keepalive: true
                     hostname: 'localhost'
-                    port: 5000
+                    port: 5001
                     base: ''
 
     grunt.loadNpmTasks 'grunt-contrib-connect'

@@ -22,7 +22,7 @@
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li><a href="#">Link</a></li>
+                        <li>{{#link-to 'documents'}}Documents{{/link-to}}</li>
                         <li>{{#link-to 'about'}}About{{/link-to}}</li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
@@ -39,21 +39,21 @@
     </script>
 
     <!-- Main template -->
-    <script type="text/x-handlebars" data-template-name="main">
+    <script type="text/x-handlebars" data-template-name="documents">
 
         <div class="col-sm-3">
             <ul class="nav nav-pills nav-stacked">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">Profile</a></li>
-                <li><a href="#">Messages</a></li>
+                {{#each model}}
+                    <li>
+                        <a href="#">
+                            {{title}} by {{author.name}}
+                        </a>
+                    </li>
+                {{/each}}
             </ul>
         </div>
 
         <div class="col-sm-9">
-            <h1>Testing here</h1>
-            <h3>Subtitle goes here</h3>
-            <div class="body">
-            </div>
             {{outlet}}
         </div>
 

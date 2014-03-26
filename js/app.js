@@ -21,12 +21,18 @@ var documents = [
 App.Router.map(function() {
     this.route('about');
     this.resource('documents', function () {
-        this.route('show', { path: ':document_id' });
+        this.resource('document', { path: ':document_id' });
     });
 });
 
 App.DocumentsRoute = Ember.Route.extend({
     model: function () {
         return documents;
+    }
+});
+
+App.DocumentRoute = Ember.Route.extend({
+    model: function (params) {
+        return documents.findBy('id', params.document_id);
     }
 });

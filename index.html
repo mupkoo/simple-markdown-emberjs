@@ -45,7 +45,7 @@
             <ul class="nav nav-pills nav-stacked">
                 {{#each model}}
                     <li>
-                        {{#link-to 'documents.show' this}}
+                        {{#link-to 'document' this}}
                             {{title}} by {{author.name}}
                         {{/link-to}}
                     </li>
@@ -60,7 +60,7 @@
     </script>
     <!-- End of main template -->
 
-    <script type="text/x-handlebars" data-template-name="documents/show">
+    <script type="text/x-handlebars" data-template-name="document">
         <h1>{{title}}</h1>
         <h3>by {{author.name}}</h3>
         <div class="body">{{body}}</div>

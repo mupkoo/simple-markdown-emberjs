@@ -74,7 +74,7 @@
     <script type="text/x-handlebars" data-template-name="document/_show">
         <h1>{{title}}</h1>
         <h3>by {{author.name}}</h3>
-        <div class="body">{{body}}</div>
+        <div class="body">{{parse-markdown body}}</div>
     </script>
 
     <script type="text/x-handlebars" data-template-name="document/_form">
@@ -115,6 +115,7 @@
     <script src="js/libs/handlebars-1.1.2.js"></script>
     <script src="js/libs/ember-1.4.0.js"></script>
     <script src="bower_components/moment/moment.js"></script>
+    <script src="bower_components/showdown/src/showdown.js"></script>
     <script src="js/app.js"></script>
 </body>
 </html>

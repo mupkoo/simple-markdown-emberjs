@@ -62,9 +62,41 @@
     <!-- End of main template -->
 
     <script type="text/x-handlebars" data-template-name="document">
+        {{#if isEditing}}
+            {{ partial 'document/form' }}
+            <button class="btn btn-primary" {{action 'doneEditing'}}>Save Document</button>
+        {{else}}
+            {{ partial 'document/show' }}
+            <button class="btn btn-primary" {{action 'edit'}}>Edit Document</button>
+        {{/if}}
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="document/_show">
         <h1>{{title}}</h1>
         <h3>by {{author.name}}</h3>
         <div class="body">{{body}}</div>
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="document/_form">
+        <div class="row">
+            <div class="col-xs-6">
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    {{input type="text" value=title id="title" class="form-control" placeholder="Document's title"}}
+                </div>
+                <div class="form-group">
+                    <label for="author_name">Author Name</label>
+                    {{input type="text" value=author.name id="author_name" class="form-control" placeholder="Document's author"}}
+                </div>
+                <div class="form-group">
+                    <label for="body">Body</label>
+                    {{textarea value=body id="body" class="form-control" placeholder="Document's title" rows="20"}}
+                </div>
+            </div>
+            <div class="col-xs-6">
+                {{ partial 'document/show' }}
+            </div>
+        </div>
     </script>
 
     <!-- About template -->

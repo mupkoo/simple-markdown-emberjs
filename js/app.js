@@ -39,6 +39,21 @@ App.DocumentRoute = Ember.Route.extend({
     }
 });
 
+// Controllers
+App.DocumentController = Ember.ObjectController.extend({
+    isEditing: false,
+
+    actions: {
+        edit: function () {
+            this.set('isEditing', true);
+        },
+
+        doneEditing: function () {
+            this.set('isEditing', false);
+        }
+    }
+});
+
 // Handlebar helpers
 Ember.Handlebars.helper('format-date', function (date) {
     return moment(date).fromNow();

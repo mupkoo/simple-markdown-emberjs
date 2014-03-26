@@ -20,7 +20,9 @@ var documents = [
 
 App.Router.map(function() {
     this.route('about');
-    this.resource('documents');
+    this.resource('documents', function () {
+        this.route('show', { path: ':document_id' });
+    });
 });
 
 App.DocumentsRoute = Ember.Route.extend({
